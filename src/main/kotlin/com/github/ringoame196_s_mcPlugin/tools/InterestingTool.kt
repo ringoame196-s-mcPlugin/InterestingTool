@@ -1,5 +1,6 @@
 package com.github.ringoame196_s_mcPlugin.tools
 
+import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
 import com.github.ringoame196_s_mcPlugin.events.Interface.LeftClick
 import com.github.ringoame196_s_mcPlugin.events.Interface.RightClick
 import com.github.ringoame196_s_mcPlugin.managers.InterestingToolManager
@@ -25,6 +26,7 @@ abstract class InterestingTool {
         val lore = mutableListOf<String>("[機能]")
         if (this is RightClick) lore.add("右クリック - ${this.rightDescription}")
         if (this is LeftClick) lore.add("左クリック - ${this.leftDescription}")
+        if (this is BreakBlock) lore.add("ブロック破壊 - ${this.breakBlockDescription}")
         return lore
     }
 }
