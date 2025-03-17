@@ -12,7 +12,7 @@ class InItemPickaxe() : InterestingTool(), BreakBlock {
     override val itemMaterial: Material = Material.IRON_PICKAXE
     override val itemName: String = "${ChatColor.GOLD}Inアイテムピッケル"
 
-    override val breakBlockDescription: String = "掘ったアイテムをインベントリに"
+    override val breakBlockDescription: String = inItem.breakBlockDescription
 
     override fun breakBlock(e: BlockBreakEvent) {
         inItem.breakBlock(e)
