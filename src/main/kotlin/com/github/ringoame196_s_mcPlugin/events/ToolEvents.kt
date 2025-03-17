@@ -30,7 +30,7 @@ class ToolEvents : Listener {
 
     @EventHandler
     fun onLeftClick(e: PlayerInteractEvent) {
-        if (e.action != Action.RIGHT_CLICK_AIR && e.action != Action.RIGHT_CLICK_BLOCK) return
+        if (e.action != Action.LEFT_CLICK_AIR && e.action != Action.LEFT_CLICK_BLOCK) return
         val interToolId = acquisitionInterToolId(e.item ?: return)
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
         if (interestingTool !is LeftClick) return
