@@ -1,6 +1,7 @@
 package com.github.ringoame196_s_mcPlugin.tools
 
 import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
+import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.event.block.BlockBreakEvent
 
@@ -9,7 +10,7 @@ class InItemShovel() : InterestingTool(), BreakBlock {
 
     override val interToolId: String = "inItemShovel"
     override val itemMaterial: Material = Material.IRON_SHOVEL
-    override val itemName: String = "Inアイテムシャベル"
+    override val itemName: String = "${ChatColor.GOLD}Inアイテムシャベル"
 
     override val breakBlockDescription: String = "掘ったアイテムをインベントリに"
 
