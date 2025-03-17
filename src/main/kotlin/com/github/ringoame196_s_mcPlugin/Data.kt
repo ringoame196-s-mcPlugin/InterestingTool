@@ -9,6 +9,7 @@ import com.github.ringoame196_s_mcPlugin.tools.InItemAxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemPickaxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemShovel
 import com.github.ringoame196_s_mcPlugin.tools.InterestingTool
+import com.github.ringoame196_s_mcPlugin.tools.PachinkoPickaxe
 import com.github.ringoame196_s_mcPlugin.tools.SnowBallShovel
 
 object Data {
@@ -22,6 +23,7 @@ object Data {
         InEnderChestPickaxe(),
         InEnderChestAxe(),
         InEnderChestShovel(),
+        PachinkoPickaxe()
     )
     val InterestingToolMap = mutableMapOf<String, InterestingTool>()
 }
