@@ -19,4 +19,9 @@ class InterestingToolManager() {
         item.itemMeta = meta
         return item
     }
+
+    fun acquisitionInterToolId(item: ItemStack): String? {
+        val meta = item.itemMeta ?: return null
+        return meta.persistentDataContainer.get(key, PersistentDataType.STRING)
+    }
 }
