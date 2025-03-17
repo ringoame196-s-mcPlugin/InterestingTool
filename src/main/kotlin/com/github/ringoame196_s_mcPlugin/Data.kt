@@ -1,5 +1,6 @@
 package com.github.ringoame196_s_mcPlugin
 
+import com.github.ringoame196_s_mcPlugin.tools.FireBallAxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemAxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemPickaxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemShovel
@@ -11,7 +12,8 @@ object Data {
         SnowBallShovel(),
         InItemPickaxe(),
         InItemAxe(),
-        InItemShovel()
+        InItemShovel(),
+        FireBallAxe()
     )
     val InterestingToolMap = mutableMapOf<String, InterestingTool>()
 }
