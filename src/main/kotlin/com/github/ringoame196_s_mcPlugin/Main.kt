@@ -7,7 +7,7 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class Main : JavaPlugin() {
 
-    companion object {
+    companion object { // どこからでもpluginを取得できるように
         lateinit var plugin: Main
             private set
     }
