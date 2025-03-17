@@ -1,6 +1,7 @@
 package com.github.ringoame196_s_mcPlugin.tools
 
 import com.github.ringoame196_s_mcPlugin.events.Interface.Attack
+import com.github.ringoame196_s_mcPlugin.events.Interface.BlockDamage
 import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
 import com.github.ringoame196_s_mcPlugin.events.Interface.LeftClick
 import com.github.ringoame196_s_mcPlugin.events.Interface.RightClick
@@ -29,6 +30,7 @@ abstract class InterestingTool {
         if (this is LeftClick) lore.add("左 - ${this.leftDescription}")
         if (this is BreakBlock) lore.add("破壊 - ${this.breakBlockDescription}")
         if (this is Attack) lore.add("破壊 - ${this.attackDescription}")
+        if (this is BlockDamage) lore.add("破壊前 - ${this.breakDamageDescription}")
         return lore
     }
 }

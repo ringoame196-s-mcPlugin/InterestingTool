@@ -2,6 +2,7 @@ package com.github.ringoame196_s_mcPlugin.events
 
 import com.github.ringoame196_s_mcPlugin.Data
 import com.github.ringoame196_s_mcPlugin.events.Interface.Attack
+import com.github.ringoame196_s_mcPlugin.events.Interface.BlockDamage
 import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
 import com.github.ringoame196_s_mcPlugin.events.Interface.LeftClick
 import com.github.ringoame196_s_mcPlugin.events.Interface.RightClick
@@ -11,6 +12,7 @@ import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.block.Action
 import org.bukkit.event.block.BlockBreakEvent
+import org.bukkit.event.block.BlockDamageEvent
 import org.bukkit.event.entity.EntityDamageByEntityEvent
 import org.bukkit.event.player.PlayerInteractEvent
 import org.bukkit.inventory.ItemStack
@@ -58,5 +60,15 @@ class ToolEvents : Listener {
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
         if (interestingTool !is Attack) return
         interestingTool.attack(e)
+    }
+
+    @EventHandler
+    fun onBreakDamageBlock(e: BlockDamageEvent) {
+        val player = e.player
+        val item = player.inventory.itemInMainHand
+        val interToolId = acquisitionInterToolId(item)
+        val interestingTool = Data.InterestingToolMap[interToolId] ?: return
+        if (interestingTool !is BlockDamage) return
+        interestingTool.blockDamage(e)
     }
 }
