@@ -1,5 +1,6 @@
 package com.github.ringoame196_s_mcPlugin
 
+import com.github.ringoame196_s_mcPlugin.tools.BoldAxe
 import com.github.ringoame196_s_mcPlugin.tools.FireBallAxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemAxe
 import com.github.ringoame196_s_mcPlugin.tools.InItemPickaxe
@@ -13,7 +14,8 @@ object Data {
         InItemPickaxe(),
         InItemAxe(),
         InItemShovel(),
-        FireBallAxe()
+        FireBallAxe(),
+        BoldAxe()
     )
     val InterestingToolMap = mutableMapOf<String, InterestingTool>()
 }
