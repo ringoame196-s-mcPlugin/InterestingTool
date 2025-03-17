@@ -4,12 +4,12 @@ import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
 import org.bukkit.Material
 import org.bukkit.event.block.BlockBreakEvent
 
-class InItemPickaxe() : InterestingTool(), BreakBlock {
+class InItemAxe() : InterestingTool(), BreakBlock {
     private val inItem = InItem()
 
-    override val interToolId: String = "inItemPickaxe"
-    override val itemMaterial: Material = Material.IRON_PICKAXE
-    override val itemName: String = "Inアイテムピッケル"
+    override val interToolId: String = "inItemAxe"
+    override val itemMaterial: Material = Material.IRON_AXE
+    override val itemName: String = "Inアイテム斧"
 
     override val breakBlockDescription: String = "掘ったアイテムをインベントリに"
 
