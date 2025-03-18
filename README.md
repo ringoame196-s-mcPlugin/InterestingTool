@@ -1,5 +1,13 @@
 # InterestingTool
 
+
+
+
+https://github.com/user-attachments/assets/f7567ace-4171-4d0a-bbcb-405ee5b5fc4a
+
+
+
+
 ## プラグイン説明
 面白便利ツールを追加する
 
