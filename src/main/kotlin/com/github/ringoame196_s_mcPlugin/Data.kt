@@ -4,30 +4,42 @@ import com.github.ringoame196_s_mcPlugin.tools.AutoChangePickaxe
 import com.github.ringoame196_s_mcPlugin.tools.BoldAxe
 import com.github.ringoame196_s_mcPlugin.tools.BurningPickaxe
 import com.github.ringoame196_s_mcPlugin.tools.FireBallAxe
-import com.github.ringoame196_s_mcPlugin.tools.InEnderChestAxe
-import com.github.ringoame196_s_mcPlugin.tools.InEnderChestPickaxe
-import com.github.ringoame196_s_mcPlugin.tools.InEnderChestShovel
-import com.github.ringoame196_s_mcPlugin.tools.InItemAxe
-import com.github.ringoame196_s_mcPlugin.tools.InItemPickaxe
-import com.github.ringoame196_s_mcPlugin.tools.InItemShovel
 import com.github.ringoame196_s_mcPlugin.tools.InterestingTool
 import com.github.ringoame196_s_mcPlugin.tools.PachinkoPickaxe
+import com.github.ringoame196_s_mcPlugin.tools.PutChestAxe
+import com.github.ringoame196_s_mcPlugin.tools.PutChestPickaxe
+import com.github.ringoame196_s_mcPlugin.tools.PutChestShovel
+import com.github.ringoame196_s_mcPlugin.tools.PutEnderChestAxe
+import com.github.ringoame196_s_mcPlugin.tools.PutEnderChestPickaxe
+import com.github.ringoame196_s_mcPlugin.tools.PutEnderChestShovel
+import com.github.ringoame196_s_mcPlugin.tools.PutItemAxe
+import com.github.ringoame196_s_mcPlugin.tools.PutItemPickaxe
+import com.github.ringoame196_s_mcPlugin.tools.PutItemShovel
 import com.github.ringoame196_s_mcPlugin.tools.SnowBallShovel
+import org.bukkit.block.Chest
+import org.bukkit.entity.Entity
+import org.bukkit.entity.Player
 
 object Data {
     val interestingToolList = listOf(
         SnowBallShovel(),
-        InItemPickaxe(),
-        InItemAxe(),
-        InItemShovel(),
+        PutItemPickaxe(),
+        PutItemAxe(),
+        PutItemShovel(),
         FireBallAxe(),
         BoldAxe(),
-        InEnderChestPickaxe(),
-        InEnderChestAxe(),
-        InEnderChestShovel(),
+        PutEnderChestPickaxe(),
+        PutEnderChestAxe(),
+        PutEnderChestShovel(),
         PachinkoPickaxe(),
         AutoChangePickaxe(),
-        BurningPickaxe()
+        BurningPickaxe(),
+        PutChestAxe(),
+        PutChestPickaxe(),
+        PutChestShovel()
     )
     val InterestingToolMap = mutableMapOf<String, InterestingTool>()
+
+    val playerSelectEntity = mutableMapOf<Player, Entity>()
+    val playerSelectChest = mutableMapOf<Player, Chest>()
 }
