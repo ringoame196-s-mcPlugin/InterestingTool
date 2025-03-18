@@ -1,6 +1,7 @@
 package com.github.ringoame196_s_mcPlugin.tools
 
 import com.github.ringoame196_s_mcPlugin.events.Interface.BlockDamage
+import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.event.block.BlockDamageEvent
@@ -9,7 +10,7 @@ import org.bukkit.inventory.ItemStack
 class AutoChangePickaxe() : InterestingTool(), BlockDamage {
     override val interToolId: String = "autoChangePickaxe"
     override val itemMaterial: Material = Material.IRON_PICKAXE
-    override val itemName: String = "自動切り替えツール"
+    override val itemName: String = "${ChatColor.GOLD}自動切り替えツール"
 
     override val breakDamageDescription: String = "適切なツールに切り替え"
 

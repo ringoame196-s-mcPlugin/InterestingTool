@@ -13,7 +13,7 @@ class PutEnderChestShovel() : InterestingTool(), BreakBlock, RightClick {
 
     override val interToolId: String = "putEnderChestShovel"
     override val itemMaterial: Material = Material.IRON_SHOVEL
-    override val itemName: String = "${ChatColor.GOLD}Putエンダーチェストシャベル"
+    override val itemName: String = "${ChatColor.DARK_BLUE}Putエンダーチェストシャベル"
 
     override val breakBlockDescription: String = putEnderChest.breakBlockDescription
     override val rightDescription: String = putEnderChest.rightDescription

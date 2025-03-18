@@ -2,6 +2,7 @@ package com.github.ringoame196_s_mcPlugin.tools
 
 import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
 import org.bukkit.Bukkit
+import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.event.block.BlockBreakEvent
 import org.bukkit.inventory.FurnaceRecipe
@@ -10,7 +11,7 @@ import org.bukkit.inventory.ItemStack
 class BurningPickaxe() : InterestingTool(), BreakBlock {
     override val interToolId: String = "burningPickaxe"
     override val itemMaterial: Material = Material.IRON_PICKAXE
-    override val itemName: String = "かまどピッケル"
+    override val itemName: String = "${ChatColor.BLUE}かまどピッケル"
 
     override val breakBlockDescription: String = "焼けた状態でアイテムをドロップ"
     override fun breakBlock(e: BlockBreakEvent) {

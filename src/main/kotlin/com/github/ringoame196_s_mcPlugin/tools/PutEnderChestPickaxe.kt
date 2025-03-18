@@ -13,7 +13,7 @@ class PutEnderChestPickaxe() : InterestingTool(), BreakBlock, RightClick {
 
     override val interToolId: String = "putEnderChestPickaxe"
     override val itemMaterial: Material = Material.IRON_PICKAXE
-    override val itemName: String = "${ChatColor.GOLD}Putエンダーチェストピッケル"
+    override val itemName: String = "${ChatColor.DARK_BLUE}Putエンダーチェストピッケル"
 
     override val breakBlockDescription: String = putEnderChest.breakBlockDescription
     override val rightDescription: String = putEnderChest.rightDescription
