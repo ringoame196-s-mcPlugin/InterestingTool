@@ -26,11 +26,11 @@ abstract class InterestingTool {
 
     private fun makeLore(): List<String> {
         val lore = mutableListOf<String>("[機能]")
-        if (this is RightClick) lore.add("右 - ${this.rightDescription}")
-        if (this is LeftClick) lore.add("左 - ${this.leftDescription}")
+        if (this is Attack) lore.add("攻撃 - ${this.attackDescription}")
         if (this is BreakBlock) lore.add("破壊 - ${this.breakBlockDescription}")
-        if (this is Attack) lore.add("破壊 - ${this.attackDescription}")
         if (this is BlockDamage) lore.add("破壊前 - ${this.breakDamageDescription}")
+        if (this is LeftClick) lore.add("左 - ${this.leftDescription}")
+        if (this is RightClick) lore.add("右 - ${this.rightDescription}")
         return lore
     }
 }
