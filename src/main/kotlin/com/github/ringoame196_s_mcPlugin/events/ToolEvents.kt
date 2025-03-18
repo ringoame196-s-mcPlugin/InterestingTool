@@ -24,9 +24,14 @@ class ToolEvents : Listener {
         return interestingToolManager.acquisitionInterToolId(item)
     }
 
+    private fun checkEnduranceValue(item: ItemStack): Boolean {
+        return item.durability < item.type.maxDurability
+    }
+
     @EventHandler
     fun onRightClick(e: PlayerInteractEvent) {
         if (e.action != Action.RIGHT_CLICK_AIR && e.action != Action.RIGHT_CLICK_BLOCK) return
+        if (!checkEnduranceValue(e.item ?: return)) return
         val interToolId = acquisitionInterToolId(e.item ?: return) ?: return
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
         if (interestingTool !is RightClick) return
@@ -36,6 +41,7 @@ class ToolEvents : Listener {
     @EventHandler
     fun onLeftClick(e: PlayerInteractEvent) {
         if (e.action != Action.LEFT_CLICK_AIR && e.action != Action.LEFT_CLICK_BLOCK) return
+        if (!checkEnduranceValue(e.item ?: return)) return
         val interToolId = acquisitionInterToolId(e.item ?: return)
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
         if (interestingTool !is LeftClick) return
@@ -48,6 +54,7 @@ class ToolEvents : Listener {
         val item = player.inventory.itemInMainHand
         val interToolId = acquisitionInterToolId(item)
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
+        if (!checkEnduranceValue(item)) return
         if (interestingTool !is BreakBlock) return
         interestingTool.breakBlock(e)
     }
@@ -56,6 +63,7 @@ class ToolEvents : Listener {
     fun onAttack(e: EntityDamageByEntityEvent) {
         val attacker = e.damager as? Player ?: return
         val item = attacker.inventory.itemInMainHand
+        if (!checkEnduranceValue(item)) return
         val interToolId = acquisitionInterToolId(item)
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
         if (interestingTool !is Attack) return
@@ -68,6 +76,7 @@ class ToolEvents : Listener {
         val item = player.inventory.itemInMainHand
         val interToolId = acquisitionInterToolId(item)
         val interestingTool = Data.InterestingToolMap[interToolId] ?: return
+        if (!checkEnduranceValue(item)) return
         if (interestingTool !is BlockDamage) return
         interestingTool.blockDamage(e)
     }

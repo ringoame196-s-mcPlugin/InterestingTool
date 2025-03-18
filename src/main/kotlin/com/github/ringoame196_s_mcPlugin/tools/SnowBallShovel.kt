@@ -1,6 +1,7 @@
 package com.github.ringoame196_s_mcPlugin.tools
 
 import com.github.ringoame196_s_mcPlugin.events.Interface.RightClick
+import com.github.ringoame196_s_mcPlugin.managers.InterestingToolManager
 import org.bukkit.Material
 import org.bukkit.Sound
 import org.bukkit.entity.Snowball
@@ -16,10 +17,14 @@ class SnowBallShovel() : InterestingTool(), RightClick {
 
     override fun rightClick(e: PlayerInteractEvent) {
         if (e.action != Action.RIGHT_CLICK_AIR) return
+        val interestingToolManager = InterestingToolManager()
         val player = e.player
         val sound = Sound.ENTITY_ARROW_SHOOT
         val snowball = player.launchProjectile(Snowball::class.java)
-        snowball.velocity = snowball.velocity.multiply(2) // スピードを2倍に
+        val speed = 2
+        val reduceValue = 1
+        snowball.velocity = snowball.velocity.multiply(speed) // スピードを2倍に
         player.playSound(player, sound, 1f, 1f)
+        interestingToolManager.reduceEnduranceValue(e.item ?: return, reduceValue)
     }
 }

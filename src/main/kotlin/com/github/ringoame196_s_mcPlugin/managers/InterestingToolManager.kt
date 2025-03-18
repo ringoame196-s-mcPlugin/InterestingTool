@@ -24,4 +24,10 @@ class InterestingToolManager() {
         val meta = item.itemMeta ?: return null
         return meta.persistentDataContainer.get(key, PersistentDataType.STRING)
     }
+
+    fun reduceEnduranceValue(item: ItemStack, amount: Int) {
+        val meta = item.itemMeta ?: return
+        if (meta.isUnbreakable) return
+        item.durability = (item.durability + amount).toShort()
+    }
 }

@@ -3,6 +3,7 @@ package com.github.ringoame196_s_mcPlugin.tools
 import com.github.ringoame196_s_mcPlugin.Data
 import com.github.ringoame196_s_mcPlugin.events.Interface.Attack
 import com.github.ringoame196_s_mcPlugin.events.Interface.RightClick
+import com.github.ringoame196_s_mcPlugin.managers.InterestingToolManager
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.Sound
@@ -32,11 +33,14 @@ class ExplosionAxe() : InterestingTool(), Attack, RightClick {
 
     override fun rightClick(e: PlayerInteractEvent) {
         val player = e.player
+        val item = player.inventory.itemInMainHand
+        val interestingToolManager = InterestingToolManager()
         val message = "${ChatColor.RED}爆発！"
         val entity = Data.playerSelectEntity[player] ?: return
         val location = entity.location
         player.sendMessage(message)
         location.world?.createExplosion(location, 4.0f)
         Data.playerSelectEntity.remove(player)
+        interestingToolManager.reduceEnduranceValue(item, item.type.maxDurability.toInt())
     }
 }
