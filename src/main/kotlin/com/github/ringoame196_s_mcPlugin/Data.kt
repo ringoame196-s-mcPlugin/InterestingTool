@@ -3,6 +3,7 @@ package com.github.ringoame196_s_mcPlugin
 import com.github.ringoame196_s_mcPlugin.tools.AutoChangePickaxe
 import com.github.ringoame196_s_mcPlugin.tools.BoldAxe
 import com.github.ringoame196_s_mcPlugin.tools.BurningPickaxe
+import com.github.ringoame196_s_mcPlugin.tools.ExplosionAxe
 import com.github.ringoame196_s_mcPlugin.tools.FireBallAxe
 import com.github.ringoame196_s_mcPlugin.tools.InterestingTool
 import com.github.ringoame196_s_mcPlugin.tools.PachinkoPickaxe
@@ -36,7 +37,8 @@ object Data {
         BurningPickaxe(),
         PutChestAxe(),
         PutChestPickaxe(),
-        PutChestShovel()
+        PutChestShovel(),
+        ExplosionAxe()
     )
     val InterestingToolMap = mutableMapOf<String, InterestingTool>()
 
