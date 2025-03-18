@@ -1,13 +1,11 @@
-package com.github.ringoame196_s_mcPlugin.tools
+package com.github.ringoame196_s_mcPlugin.tools.systems
 
-import com.github.ringoame196_s_mcPlugin.events.Interface.BreakBlock
 import org.bukkit.Sound
 import org.bukkit.event.block.BlockBreakEvent
+import org.bukkit.inventory.Inventory
 
-class InItem : BreakBlock {
-    override val breakBlockDescription: String = "掘ったアイテムをインベントリに"
-
-    override fun breakBlock(e: BlockBreakEvent) {
+class PutSystem {
+    fun breakBlock(e: BlockBreakEvent, inventory: Inventory) {
         e.isDropItems = false
         val player = e.player
         val block = e.block
@@ -16,7 +14,7 @@ class InItem : BreakBlock {
 
         player.playSound(player, sound, 1f, 1f)
         for (item in dropItems) { // ドロップしたアイテムを渡す
-            player.inventory.addItem(item)
+            inventory.addItem(item)
         }
     }
 }
